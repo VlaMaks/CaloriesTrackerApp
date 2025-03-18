@@ -1,4 +1,4 @@
-# Calorie Tracker API
+# Calories Tracker API
 
 ## Описание
 

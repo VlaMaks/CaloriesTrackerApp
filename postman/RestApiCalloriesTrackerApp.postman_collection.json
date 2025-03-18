@@ -1,0 +1,149 @@
+{
+	"info": {
+		"_postman_id": "3110277e-45fa-405a-916d-b0d3e6db2e11",
+		"name": "RestApiCalloriesTrackerApp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19231376"
+	},
+	"item": [
+		{
+			"name": "CreateUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"maks\",\r\n    \"email\": \"ea@mail.ru\",\r\n    \"age\": 18,\r\n    \"weight\": 78,\r\n    \"height\": \"178\",\r\n    \"sex\": \"MALE\",\r\n    \"goal\": \"WEIGHT_LOSS\"\r\n\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateDish",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Макароны\", \r\n    \"calories\": 344,\r\n    \"protein\": 23,\r\n    \"fat\": 33, \r\n    \"carbs\": 22\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/dishes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dishes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createMeal",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "dailyReport",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/reports/daily/1?date=2025-03-18",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"reports",
+						"daily",
+						"1"
+					],
+					"query": [
+						{
+							"key": "date",
+							"value": "2025-03-18"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "checkLimit",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/reports/calories-check/1?date=2025-03-18",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"reports",
+						"calories-check",
+						"1"
+					],
+					"query": [
+						{
+							"key": "date",
+							"value": "2025-03-18"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "historyByDay",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/reports/history/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"reports",
+						"history",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

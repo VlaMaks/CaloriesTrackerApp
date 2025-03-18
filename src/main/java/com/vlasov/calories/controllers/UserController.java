@@ -3,6 +3,7 @@ package com.vlasov.calories.controllers;
 import com.vlasov.calories.entities.User;
 import com.vlasov.calories.services.UserService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -15,8 +16,8 @@ public class UserController {
     private final UserService userService;
 
     @PostMapping
-    public User createUser(@RequestBody User user) {
-        return userService.createUser(user);
+    public HttpEntity<Object> createUser(@RequestBody User user) {
+        return userService.createResponse(user);
     }
 
     @GetMapping

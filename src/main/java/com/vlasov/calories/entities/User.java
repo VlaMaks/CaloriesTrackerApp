@@ -1,5 +1,6 @@
 package com.vlasov.calories.entities;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -14,9 +15,10 @@ public class User {
     private String email;
     private int age;
     private double weight;
-    private double height;
+    private int height;
     @Enumerated(EnumType.STRING)
     private CalorieControlGoal goal;
+    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private double dailyCalorieIntake;
     @Enumerated(EnumType.STRING)
     private Sex sex;

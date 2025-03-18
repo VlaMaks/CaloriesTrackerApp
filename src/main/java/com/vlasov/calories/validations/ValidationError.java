@@ -1,4 +1,4 @@
-package com.vlasov.validations;
+package com.vlasov.calories.validations;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

@@ -1,14 +1,15 @@
-package com.vlasov.validations.user;
+package com.vlasov.calories.validations.users;
 
 import com.vlasov.calories.entities.User;
-import com.vlasov.validations.RequestValidator;
-import com.vlasov.validations.ValidationError;
+import com.vlasov.calories.validations.RequestValidations;
+import com.vlasov.calories.validations.ValidationError;
+import org.springframework.stereotype.Component;
 
 import java.util.Optional;
 import java.util.regex.Pattern;
 
-
-public class UserRequestEmailValidator implements RequestValidator<User> {
+@Component
+public class UserRequestEmailValidations implements RequestValidations<User> {
     @Override
     public Optional<ValidationError> validate(User user) {
         String email = user.getEmail();

@@ -8,6 +8,7 @@ import java.util.List;
 
 @Entity
 @Data
+@Table(name = "meals")
 public class Meal {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,7 +18,6 @@ public class Meal {
     private User user;
     @ManyToMany
     private List<Dish> dishes;
-    private String mealTime;
     private LocalDate date;
 
 }

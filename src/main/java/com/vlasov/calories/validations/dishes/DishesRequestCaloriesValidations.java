@@ -11,7 +11,7 @@ import java.util.Optional;
 public class DishesRequestCaloriesValidations implements RequestValidations<Dish> {
     @Override
     public Optional<ValidationError> validate(Dish dish) {
-        return (dish.getCalories() < 0 || dish.getCalories() > 2000)
+        return (dish.getCalories() <= 0 || dish.getCalories() > 2000)
                 ? Optional.of(new ValidationError("Некорректное количество калорий"))
                 : Optional.empty();
     }

@@ -4,6 +4,7 @@ import com.vlasov.calories.entities.Meal;
 import com.vlasov.calories.services.MealService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,7 +18,7 @@ public class MealController {
     private final MealService mealService;
 
     @PostMapping
-    public Meal createMeal(@RequestBody Meal meal) {
-        return mealService.createMeal(meal);
+    public ResponseEntity<Object> createMeal(@RequestBody Meal meal) {
+        return mealService.createResponse(meal);
     }
 }

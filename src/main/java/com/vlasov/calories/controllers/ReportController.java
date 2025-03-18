@@ -1,14 +1,17 @@
 package com.vlasov.calories.controllers;
 
+import com.vlasov.calories.dto.DailyReport;
 import com.vlasov.calories.entities.Meal;
 import com.vlasov.calories.entities.User;
 import com.vlasov.calories.repositories.UserRepository;
 import com.vlasov.calories.services.MealService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/reports")
@@ -19,7 +22,7 @@ public class ReportController {
     private final UserRepository userRepository;
 
     @GetMapping("/daily/{userId}")
-    public List<Meal> getDailyReport(@PathVariable Long userId, @RequestParam LocalDate date) {
+    public HttpEntity<DailyReport> getDailyReport(@PathVariable Long userId, @RequestParam("date") LocalDate date) {
         return mealService.getDailyReport(userId, date);
     }
 
@@ -30,7 +33,7 @@ public class ReportController {
     }
 
     @GetMapping("/history/{userId}")
-    public List<Meal> getMealHistory(@PathVariable Long userId) {
+    public Map<LocalDate, List<Meal>> getMealHistory(@PathVariable Long userId) {
         return mealService.getMealHistory(userId);
     }
 }
